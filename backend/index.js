@@ -7,6 +7,7 @@ const port = 4500 || process.env.PORT;
 
 const app = express();
 const server = http.createServer(app);
+app.use(cors());
 
 app.get("/",(req,res)=>{
     res.send("It is working pretty damn!");
