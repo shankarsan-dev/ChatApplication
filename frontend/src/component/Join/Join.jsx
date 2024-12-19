@@ -1,22 +1,34 @@
-import React, { useState } from 'react';
-import "./join.css";
-const Join = () => {
-const [name, setName] = useState("");
 
-const handleClick = ()=>{
-  alert("Joining room "+name);
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import "./join.css";
+let user; 
+const Join = () => {
+
+const [name, setName] = useState("");
+const sendUser= ()=>{
+  user = document.getElementById("JoinInput").value;
+  document.getElementById("JoinInput").value = "";
+
 }
   return (
     
     <div className='JoinPage'>
       <div className="JoinContainer">
+     <img src="..\src\images\guff-gaaf-high-resolution-logo.png" alt="logo" />
 
-      <h1>Join Page</h1>
+      <input className='JoinInput' type="text" placeholder='Your Name'id='JoinInput'/>
+      <Link  to="chat" >
+      <button to="chat"  className="JoinBtn" onClick={sendUser}>Join</button>
+      </Link>
+   
       </div>
-      <input type="text" placeholder='Your Name' onChange={(e)=>e.target.value}/>
-      <button onClick={handleClick}>Join</button>
+     
     </div>
   )
 }
 
-export default Join
+export default Join;
+export { user };
+
+

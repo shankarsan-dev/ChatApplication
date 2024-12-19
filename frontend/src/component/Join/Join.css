@@ -1,4 +1,71 @@
 .JoinPage{
-    background-color: black;
+    background-color: #85144b;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
     
+    
+}
+/* body{
+margin: 0;
+} */
+.JoinContainer{
+    margin-top: 10%;
+    border: 2px solid white;
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #85144b;
+    justify-content: space-evenly   ;
+    color: white;
+}
+.JoinContainer> img{
+    width: 10vmax;
+    height: 10vmax;
+   
+}
+.JoinContainer>h1{
+    font-size: 3vmax;
+
+}
+.JoinInput{
+    width: 25vw;
+    padding: 1.5vmax;
+    border:none;
+    outline: none;
+    font-size: 1.2vmax;
+    margin:2vmax;
+    box-sizing: border-box;
+}
+.JoinBtn{
+    width: 25vw;
+    padding: 1.5vmax;
+    border:none;
+    outline: none;
+    font-size: 1.2vmax;
+    margin:2vmax;
+    background-color: crimson;
+    color: white;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.JoinBtn:hover{
+    width: 25vw;
+    padding: 1.5vmax;
+    border:none;
+    outline: none;
+    font-size: 1.2vmax;
+    margin:2vmax;
+    background-color: rgb(174, 2, 36);
+    color: white;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    cursor: pointer;
 }
