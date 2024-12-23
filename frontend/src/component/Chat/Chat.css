@@ -1,0 +1,161 @@
+/* .ChatPage{
+    background-color:#ffcfdf;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    border: 2px solid black;
+    
+    
+}
+.ChatContainer{
+    margin-top: 8%;
+    background-color: white;
+    height: 70%;
+    width: 60%;
+    border: 2px solid black;
+}
+
+.Header{
+    background-color: #85144b;
+    height: 15%;
+    width:100%;
+   
+}
+.ChatBox{
+    border: 0.2max solid black;
+    height: 70%;
+    background-color: white;
+
+}
+
+.InputBox{
+background-color: aquamarine;
+border: 0.2max solid rgb(0, 0, 0) ;
+height: 15%;
+box-sizing: border-box;
+display: flex;
+} 
+.ChatInput{
+width: 80%;
+border: none;
+background-color: white;
+
+}
+
+.sendBtn{
+    background-color: crimson;
+    color: white;
+    border: none;
+    width: 20%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.sendBtn:hover{
+    background-color: rgb(120, 10, 32);
+    color: white;
+    border: none;
+    width: 20%;
+} */
+.ChatPage {
+    background-color: #ffcfdf; /* Soft pink background */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    border: 2px solid #85144b; /* Deep maroon border */
+}
+
+.ChatContainer {
+    margin-top: 8%;
+    background-color: white;
+    height: 70%;
+    width: 60%;
+    border: 2px solid #85144b; /* Deep maroon border */
+    border-radius: 8px; /* Optional for a modern touch */
+    display: flex;
+    flex-direction: column;
+}
+
+.Header {
+    background-color: #85144b; /* Deep maroon header */
+    height: 15%;
+    width: 100%;
+    color: white; /* Ensure readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vmax; /* Scalable text */
+}
+
+.ChatBox {
+    border: 2px solid #ffe6f0; /* Pale pink for subtle contrast */
+    height: 70%;
+    background-color: white; /* Clean white for chat area */
+    border-radius: 4px;
+    padding: 1vmax; /* Add spacing */
+}
+
+.InputBox {
+    background-color: #ffe6f0; /* Pale pink for input area */
+    height: 15%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.1vmax;
+}
+
+.ChatInput {
+   
+    display: inline-block;
+    width: 70%;
+    border: none;
+    background-color: white;
+    color: #000000; /* Black text for contrast */
+    padding: 0.5vmax;
+    font-size: 1.2vmax;
+}
+
+.SendBtn {
+    background-color: #dc143c; 
+    display: inline-block;
+    /* Crimson for send button */
+    color: white;
+    border: none;
+    width: 20%;
+    height: 90%;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.2vmax;
+}
+
+.SendBtn:hover {
+    background-color: #ae0224; /* Deep red for hover state */
+    color: white;
+    width: 20%;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+.SendBtn>img{
+    display: inline-block;
+    width: 2.5vmax;
+    padding: 5px;
+    transition:  all 0.3s;
+    filter: brightness(100) invert();
+}
+.SendBtn:hover img {
+    display: inline-block;
+    width: 2.5vmax;
+    padding: 5px;
+    transform: translateX(15px)
+   ;
+}
+

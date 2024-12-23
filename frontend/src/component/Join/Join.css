@@ -1,4 +1,4 @@
-.JoinPage{
+/* .JoinPage{
     background-color: #85144b;
     width: 100vw;
     height: 100vh;
@@ -10,9 +10,7 @@
     
     
 }
-/* body{
-margin: 0;
-} */
+
 .JoinContainer{
     margin-top: 10%;
     border: 2px solid white;
@@ -68,4 +66,69 @@ margin: 0;
     box-sizing: border-box;
     transition: all 0.3s;
     cursor: pointer;
+} */
+.JoinPage {
+    background-color: #85144b;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+.JoinContainer {
+    margin-top: 10%;
+    border: 2px solid #ffd700; /* Gold for a standout border */
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #85144b;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.JoinContainer > img {
+    width: 10vmax;
+    height: 10vmax;
+}
+
+.JoinContainer > h1 {
+    font-size: 3vmax;
+}
+
+.JoinInput {
+    width: 25vw;
+    padding: 1.5vmax;
+    border: 1px solid #f5f5f5; /* Light gray for subtle contrast */
+    outline: none;
+    font-size: 1.2vmax;
+    margin: 2vmax;
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Light gray background */
+    color: #1a1a1a; /* Dark text for inputs */
+    border-radius: 5px; /* Rounded edges for a modern look */
+}
+
+.JoinBtn {
+    width: 25vw;
+    padding: 1.5vmax;
+    border: none;
+    outline: none;
+    font-size: 1.2vmax;
+    margin: 2vmax;
+    background-color: #dc143c; /* Crimson */
+    color: white;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 5px; /* Match input style */
+}
+
+.JoinBtn:hover {
+    background-color: #ae0224; /* Deep red hover */
+    transform: scale(1.05); /* Slight hover scale effect */
 }
