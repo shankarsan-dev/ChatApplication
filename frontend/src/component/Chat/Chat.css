@@ -98,6 +98,7 @@ background-color: white;
 .ChatBox {
     border: 2px solid #ffe6f0; /* Pale pink for subtle contrast */
     height: 70%;
+    color: black;
     background-color: white; /* Clean white for chat area */
     border-radius: 4px;
     padding: 1vmax; /* Add spacing */

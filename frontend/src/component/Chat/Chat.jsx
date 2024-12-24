@@ -1,41 +1,75 @@
-import React, { useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
 import socketIO from "socket.io-client";
 import { user } from "../Join/Join";
+import Message from "../Message/Message";
 import "./Chat.css";
-
 const ENDPOINT = "http://localhost:4500/";
+let socket;
+const Chat = () => { 
+const[id,setId]= useState("");
+const send = ()=>{
 
-const Chat = () => {
-  const socket = socketIO(ENDPOINT, { transports: ["websocket"] });
+  const message = document.getElementById("ChatInput").value;
+socket.emit("message",{message,id});
+document.getElementById("ChatInput").value= null;
+
+
+
+}
+
   useEffect(() => {
+    // Initialize socket
+    socket = socketIO(ENDPOINT, { transports: ["websocket"] });
+
+    // Handle connection and events
     socket.on("connect", () => {
-      alert("connected "+ user);
+      setId(socket.id);
+      console.log(`Connected as ${user}`);
+      socket.emit("joined", { user });
 
-      socket.emit('joined',{user});
-      socket.on('welcome',(data)=>{
-        console.log(data.user);
-        console.log(data.message);
-      })
-      socket.on("user joined",(data)=>{
-        console.log(data.user,data.message);
-      })
+      socket.on("welcome", (data) => {
+        console.log(data.user, data.message);
+      });
 
+      socket.on("userJoined", (data) => {
+        console.log(data.user, data.message);
+      });
+      
+
+      socket.on("userLeft", (data) => {
+        console.log(data.user, data.message);
+      });
     });
-    return () => {};
+
+    // Cleanup on unmount
+    return () => {
+      socket.disconnect();
+    };
   }, []);
+  useEffect(()=>{
+    socket.on("sendMessage",(data)=>{
+      console.log(data.user,data.message,data.id);
+    })
+  })
+
   return (
     <div className="ChatPage">
-    <div className="ChatContainer">
-      <div className="Header">Header</div>
-      <div className="ChatBox">ChatBox</div>
-      <div className="InputBox">
-        <input type="text" className="ChatInput" placeholder="Type your message..." />
-        <button className="SendBtn"><img src="..\src\images\send.png" alt="" /></button>
+      <div className="ChatContainer">
+        <div className="Header">Header</div>
+        <div className="ChatBox">
+        <Message message = {"hey whats up"}/>
+
+        </div>
+        <div className="InputBox">
+          <input type="text" className="ChatInput" id="ChatInput" placeholder="Type your message..." />
+          <button className="SendBtn" onClick={send}>
+            <img src="..\src\images\send.png" alt="Send" />
+          </button>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 
- export default Chat;
-
+export default Chat;

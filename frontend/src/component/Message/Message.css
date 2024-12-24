@@ -1,0 +1,20 @@
+.MessageBox{
+    background-color: silver;
+    display: inline-block;
+    padding: 1vmax;
+    margin: 1.8vmax;
+    border-radius: 0.5vmax;
+    
+}
+.Right{
+    float:right;
+    background-color: rgb(193, 188, 189);
+    color: white;
+
+    } 
+    .Left{
+        float:left;
+        background-color: rgb(90, 220, 20);
+        color: white;
+    
+        } 
