@@ -74,10 +74,10 @@ background-color: white;
 }
 
 .ChatContainer {
-    margin-top: 8%;
+    margin-top: 4%;
     background-color: white;
-    height: 70%;
-    width: 60%;
+    height: 80%;
+    width: 70%;
     border: 2px solid #85144b; /* Deep maroon border */
     border-radius: 8px; /* Optional for a modern touch */
     display: flex;
@@ -95,15 +95,28 @@ background-color: white;
     font-size: 1.5vmax; /* Scalable text */
 }
 
+/* .ChatBox {
+    border: 2px solid #ffe6f0;
+    height: 70%;
+    color: black;
+    box-sizing: border-box;
+    background-color: white; 
+
+} */
+
+
 .ChatBox {
     border: 2px solid #ffe6f0; /* Pale pink for subtle contrast */
     height: 70%;
     color: black;
+    box-sizing: border-box;
     background-color: white; /* Clean white for chat area */
-    border-radius: 4px;
-    padding: 1vmax; /* Add spacing */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+    overflow-y: auto; /* Allow scrolling if content exceeds the height */
+    padding: 1vmax; /* Add padding for better spacing */
+    gap: 0.5vmax; /* Add spacing between messages */
 }
-
 .InputBox {
     background-color: #ffe6f0; /* Pale pink for input area */
     height: 15%;

@@ -1,4 +1,4 @@
-.MessageBox{
+/* .MessageBox{
     background-color: silver;
     display: inline-block;
     padding: 1vmax;
@@ -7,7 +7,7 @@
     
 }
 .Right{
-    float:right;
+    float: right;
     background-color: rgb(193, 188, 189);
     color: white;
 
@@ -17,4 +17,30 @@
         background-color: rgb(90, 220, 20);
         color: white;
     
-        } 
+        }  */
+
+        .MessageBox {
+            display: inline-block;
+           
+            padding: 1vmax;
+            margin: 0.5vmax;
+            border-radius: 0.5vmax;
+            max-width: 70%;
+            word-wrap: break-word;
+          }
+          
+          .Right {
+            float: right; /* Align to the right */
+            width: 40%;
+            background-color: rgb(193, 188, 189);
+            color: white;
+           
+          }
+          
+          .Left {
+            float: left; /* Align to the left */
+            width: 40%;
+            background-color: rgb(90, 220, 20);
+            color: white;
+            
+          }
