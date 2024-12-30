@@ -111,7 +111,7 @@ background-color: white;
     color: black;
     box-sizing: border-box;
     background-color: white;
- display: flex;
+    display: flex;
     flex-direction: column; 
     overflow-y: auto; /* Allow scrolling if content exceeds the height */
     padding: 1vmax; /* Add padding for better spacing */
@@ -172,4 +172,25 @@ background-color: white;
     transform: translateX(15px)
    ;
 }
-
+.Logo {
+    display: inline-block;
+    width: 5vmax;
+    height: 5vmax;
+    margin:1.5vmax;
+}
+.Header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.Close{
+    display: inline-block;
+    width: 4vmax;
+    height: 4vmax;
+     transition: all 0.3s;
+     cursor: pointer;
+     margin:1.5vmax;
+}
+.Close:hover{
+    transform: scale(1.2);
+}

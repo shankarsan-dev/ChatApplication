@@ -141,7 +141,12 @@ const Chat = () => {
   return (
     <div className="ChatPage">
       <div className="ChatContainer">
-        <div className="Header">Header</div>
+        <div className="Header">
+
+        <img className="Logo" src="..\src\images\guff-gaaf-high-resolution-logo.png" alt="logo" />
+        <a href="/"><img className="Close" src="..\src\images\img.icons8.png" alt="logo" /></a>
+
+        </div>
         <div className="ChatBox" ref={chatBoxRef}>
           {messages.map((item, i) => (
             <Message user ={item.id===id?'':item.user} message={item.message} classs={item.id===id?'Right':'Left'} key={i} />
