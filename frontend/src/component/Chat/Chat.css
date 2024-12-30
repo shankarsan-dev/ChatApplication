@@ -110,9 +110,9 @@ background-color: white;
     height: 70%;
     color: black;
     box-sizing: border-box;
-    background-color: white; /* Clean white for chat area */
-    display: flex;
-    flex-direction: column; /* Stack messages vertically */
+    background-color: white;
+ display: flex;
+    flex-direction: column; 
     overflow-y: auto; /* Allow scrolling if content exceeds the height */
     padding: 1vmax; /* Add padding for better spacing */
     gap: 0.5vmax; /* Add spacing between messages */

@@ -75,15 +75,16 @@
 // export default Chat;
 import React, { useEffect, useRef, useState } from "react";
 import socketIO from "socket.io-client";
+import { user } from '../Join/Join';
 import Message from "../Message/Message";
 import "./Chat.css";
-
 const ENDPOINT = "http://localhost:4500/";
 let socket;
 
+
 const Chat = () => {
   const [id, setId] = useState("");
-  const [messages, setMessages] = useState([1, 2, 3, 4, 3, 4, 52, 56, 65, 34]);
+  const [messages, setMessages] = useState([]);
   const chatBoxRef = useRef(null);
 
   const send = () => {
@@ -99,18 +100,20 @@ const Chat = () => {
     // Handle connection and events
     socket.on("connect", () => {
       setId(socket.id);
-      console.log(`Connected as ${id}`);
-      socket.emit("joined", { id });
+      socket.emit("joined", { user });
 
       socket.on("welcome", (data) => {
+        setMessages([...messages,data]);
         console.log(data.user, data.message);
       });
 
       socket.on("userJoined", (data) => {
+        setMessages([...messages,data]);
         console.log(data.user, data.message);
       });
 
       socket.on("userLeft", (data) => {
+        setMessages([...messages,data]);
         console.log(data.user, data.message);
       });
     });
@@ -124,8 +127,9 @@ const Chat = () => {
   useEffect(() => {
     socket.on("sendMessage", (data) => {
       console.log(data.user, data.message, data.id);
+      setMessages([...messages,data]);
     });
-  });
+  },[messages]);
 
   useEffect(() => {
     // Scroll to the bottom when messages update
@@ -140,7 +144,7 @@ const Chat = () => {
         <div className="Header">Header</div>
         <div className="ChatBox" ref={chatBoxRef}>
           {messages.map((item, i) => (
-            <Message key={i} message={item} />
+            <Message user ={item.id===id?'':item.user} message={item.message} classs={item.id===id?'Right':'Left'} key={i} />
           ))}
         </div>
         <div className="InputBox">

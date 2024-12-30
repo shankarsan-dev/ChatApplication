@@ -21,7 +21,7 @@
 
         .MessageBox {
             display: inline-block;
-           
+            align-self: flex-start;
             padding: 1vmax;
             margin: 0.5vmax;
             border-radius: 0.5vmax;
@@ -30,7 +30,7 @@
           }
           
           .Right {
-            float: right; /* Align to the right */
+            align-self: flex-end;
             width: 40%;
             background-color: rgb(193, 188, 189);
             color: white;
@@ -38,7 +38,7 @@
           }
           
           .Left {
-            float: left; /* Align to the left */
+            align-self: flex-start; /* Align to the left */
             width: 40%;
             background-color: rgb(90, 220, 20);
             color: white;
